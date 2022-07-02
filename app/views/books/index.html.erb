@@ -1,3 +1,4 @@
+
 <h1>User info</h1>
 
  <h3><%= @user.name %></h3>
@@ -5,8 +6,7 @@
 <p>introduction</p>
 
 <!--Usersを後で編集する。-->
-<%=link_to "Users", user_session_path %>
-
+<%=link_to "Users",  edit_user_path %>
 
 <h1>New book</h1>
   <%= form_with model: @books do |f| %>
