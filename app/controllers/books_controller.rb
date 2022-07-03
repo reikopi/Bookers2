@@ -1,17 +1,18 @@
 class BooksController < ApplicationController
-  
+
   def new
-    @books = Books.new
+    @book = Book.new
   end
-  
+
   def create
-    @books = Books.new(books_params)
-    @books.user_id = current_user.id
-    @books.save
-    redirect_to books_path
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
+    @book.save
+    redirect_to book_path
   end
-  
+
   def index
+   @books = Books.all
   end
 
   def show
@@ -19,13 +20,13 @@ class BooksController < ApplicationController
 
   def edit
   end
-  
-  
+
+
    # 投稿データのストロングパラメータ
   private
 
-  def books_params
-    params.require(:books).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title,:body)
   end
-  
+
 end
