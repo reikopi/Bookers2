@@ -11,6 +11,11 @@
   </head>
 
   <body>
+
+   <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+   <% end %>
+
     <header>
 
     　<h2>Bookers</h2>
@@ -43,7 +48,7 @@
       </li>
       <% end %>
     </header>
-    
+
     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>
