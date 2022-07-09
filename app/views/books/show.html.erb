@@ -1,2 +1,15 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>Book detail</h1>
+  <% @books.each do |book| %>
+<div>
+  <!--%= image_tag book.get_image %>-->
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <p><%= link_to book.user.name, books_path(@book)  %></p>
+  <p>Title：<%= book.book_title %></p>
+  <p>Opinion：<%= book.caption %></p>
+  
+  <% if book.user == current_user %>
+    <%= link_to "Edit", books_path(@book), method: :edit %>
+    <%= link_to "Destroy", books_path(@book), method: :delete %>
+  <% end %>
+
+</div>

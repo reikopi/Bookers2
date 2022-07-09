@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @books = Book.all
   end
 
   def edit

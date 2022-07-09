@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
   devise_for :users
 
-  resources :books, only: [:new, :create, :index, :show, :update, :destroy]
+  resources :books, only: [:new, :create, :index, :show, :update, :destroy, :edit]
   resources :users, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
