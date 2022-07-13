@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # get 'books/edit'
   root to: "homes#top"
   get '/top' => 'homes#top', as:'top'
-  get '/about' => 'homes#about', as:'about'
+  get '/home/about' => 'homes#about', as:'about'
   devise_for :users
 
   resources :books, only: [:new, :create, :index, :show, :update, :destroy, :edit]

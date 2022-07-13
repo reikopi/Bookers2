@@ -9,11 +9,12 @@
 <h1>Book detail</h1>
 <div>
   <!--%= image_tag book.get_image %>-->
-  <p><%= image_tag @book.user.get_profile_image(100, 100) %></p>
+  <%= link_to (image_tag @book.user.get_profile_image(100, 100)), user_path(@book.user) %>
+  <!--<p>%= image_tag @book.user.get_profile_image(100, 100) %</p>-->
   <!--@userを@book.userに変更-->
-  <p><%= link_to @book.user.name, book_path(@book.id) %></p>
-  <p>Title：<%= @book.book_title %></p>
-  <p>Opinion：<%= @book.caption %></p>
+  <p><%= link_to @book.user.name, user_path(@book.user) %></p>
+  <p>Title：<%= @book.title %></p>
+  <p>Opinion：<%= @book.body %></p>
 
   <% if @book.user == current_user %>
     <%= link_to "Edit", edit_book_path(@book.id) %>
