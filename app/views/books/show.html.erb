@@ -13,7 +13,7 @@
   <!--<p>%= image_tag @book.user.get_profile_image(100, 100) %</p>-->
   <!--@userを@book.userに変更-->
   <p><%= link_to @book.user.name, user_path(@book.user) %></p>
-  <p>Title：<%= @book.title %></p>
+  <p>Title：<%= link_to @book.title, edit_book_path %></p>
   <p>Opinion：<%= @book.body %></p>
 
   <% if @book.user == current_user %>
